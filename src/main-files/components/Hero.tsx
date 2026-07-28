@@ -1,8 +1,8 @@
 
 import Card from "./util/Card.tsx";
-import profilegreen from "../../assets/profilegreen.gif";
-import spaceimage from "../../assets/spaceimage.png"
-import spaceimage2 from "../../assets/spaceimage2.jpg"
+import profilegreen from "/profilegreen.gif";
+import spaceimage from "/spaceimage.png"
+import spaceimage2 from "/spaceimage2.jpg"
 
 const Hero = () => {
   return (

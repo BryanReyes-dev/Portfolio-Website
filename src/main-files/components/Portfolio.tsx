@@ -1,9 +1,9 @@
 
 
 import DownloadLinks from "./util/DownloadLinks";
-import ResumeImgjpg from "../../assets/ResumeImgjpg.jpg";
-import ResumeImgpdf from "../../assets/ResumeImgpdf.pdf";
-import ResumeImgpng from "../../assets/ResumeImgpng.png";
+import ResumeImgjpg from "/ResumeImgjpg.jpg";
+import ResumeImgpdf from "/ResumeImgpdf.pdf";
+import ResumeImgpng from "/ResumeImgpng.png";
 
 const Portfolio = () => {
 

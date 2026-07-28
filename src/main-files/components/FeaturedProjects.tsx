@@ -1,5 +1,5 @@
-import evergreencover from "../../assets/evergreencover.png";
-import searchcover from "../../assets/searchcover.png"
+import evergreencover from "/evergreencover.png";
+import searchcover from "/searchcover.png"
 import {useState} from "react";
 import {motion} from 'framer-motion'
  

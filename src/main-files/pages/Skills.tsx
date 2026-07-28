@@ -1,7 +1,7 @@
 
 import '../../index.css'
 import { siteData } from '../../assets/Variables';
-import profilegreen from '../../assets/profilegreen.gif'
+import profilegreen from '/profilegreen.gif'
 
 ///import { useState } from 'react';
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import {motion, AnimatePresence} from 'framer-motion'
-import menuImg from '../../assets/menu.png'; 
+import menuImg from '/menu.png'; 
 import { useLocation }from 'react-router-dom';
 
 

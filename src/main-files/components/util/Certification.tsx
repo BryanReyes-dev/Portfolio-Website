@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Certification as CertificationType } from "../../../assets/Variables"; // Import the Certification type
+import { Certification as CertificationType } from "../../../assets/Variables"; 
 
 
 type CertificationProps = CertificationType & {

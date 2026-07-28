@@ -1,6 +1,6 @@
 // siteData.js
-import githubLogo from "./githubLogo.png"
-import linkedinLogo from "./linkedinLogo.png"
+import githubLogo from "/githubLogo.png"
+import linkedinLogo from "/linkedinLogo.png"
 
  
 
