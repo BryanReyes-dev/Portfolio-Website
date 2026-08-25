@@ -1,82 +1,36 @@
-# Personal Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Overview:
-This is my main portfolio website. I will be maintaining, updating and managing this repository as I gather more skills and experience.
+## Getting Started
 
-## Live Demo Link:
-[Visit portfolio site](https://portfoliowastaken.netlify.app/)
+First, run the development server:
 
-## Features:
-- Responsive mobile-first design
-- Smooth animations and transitions
-- Project showcase section
-- Skills and technology section
-- Contact form
-- Downloadable Portfolio in diffrent formats
-- Dropdown with Faeatured project
-- Certification section
-- Skills overview
-- Mobile overlay
-- Blog
-
-## Technologies Used:
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Framer Motion
-- Node.js
-
-
-## Development Tools:
-- Git
-- GitHub
-- VS Code
-
-## Repository:
-[View Repository](https://github.com/Dimethyl-tryptamine/Portfolio-Website)
-
-
-## Future Improvments:
-- CMS-powered blog content
-- Additional project case studies
-- Enhanced accessibility features
-- Performance optimizations
-
-## Installation Steps:
-clone the repository:
-
-```bash
-git clone https://github.com/Dimethyl-tryptamine/Portfolio-Website.git
-```
-
-Navigate to the project directory:
-```bash
-cd Portfolio-Website
-```
-
-Install dependencies:
-```bash
-npm install
-```
-
-Start the development server:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-Optional - Build for production:
-```bash
-npm run build
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Challenges & Lessons Learned:
-- Improved my understanding of React component architecture and state management.
-- Learned how to build responsive layouts using a mobile-first approach.
-- Gained experience working with TypeScript for safer and more maintainable code.
-- Implemented animations using Framer Motion while maintaining performance.
-- Learned how to organize and scale a larger React project structure.
-- Lifting State
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Author  
-- Bryan Reyes 
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
