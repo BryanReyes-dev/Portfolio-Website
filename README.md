@@ -27,7 +27,6 @@ This is my main portfolio website. I will be maintaining, updating and managing 
 - Framer Motion
 - Node.js
 
-
 ## Development Tools:
 - Git
 - GitHub
@@ -36,12 +35,15 @@ This is my main portfolio website. I will be maintaining, updating and managing 
 ## Repository:
 [View Repository](https://github.com/Dimethyl-tryptamine/Portfolio-Website)
 
-
 ## Future Improvments:
 - CMS-powered blog content
 - Additional project case studies
 - Enhanced accessibility features
 - Performance optimizations
+
+## Agent Files
+
+The `agent-files/` directory contains documentation for AI coding agents and is separate from this human-facing README and the application source. `AGENTS.md` contains agent instructions, `ARCHITECTURE.md` records finalized architecture, `Agents_Context.md` stores short-term working context, and `CLAUDE.md` provides the Claude entry point.
 
 ## Installation Steps:
 clone the repository:
