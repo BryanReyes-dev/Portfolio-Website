@@ -66,7 +66,7 @@ const FeaturedProjects = () => {
     
           
                 <div className={`grid med:grid-cols-2  gap-2 sml:gap-4  ${isOpen ? 'block' : 'hidden'} `}>
-                    <a href="https://evergreenestates.netlify.app/" target="_blank" rel="noopener noreferrer"> {/*add link to project here + noonpener noreferrer to close security vulnerability*/}
+                    <a href="https://evergreen-estates.netlify.app/" target="_blank" rel="noopener noreferrer"> 
                         <div className="flex flex-col justify-center">
                             <span className=" hidden med:flex justify-center">EverGreen Estates</span>
                             <div className=" h-[7rem]  med:h-full bg-tertiary rounded-lg flex m-3 flex-row items-center med:flex-col  border-[.1rem] border-solid border-primary shadow-[0px_0px_5px_1px_rgba(136,0,255,0.8)]">
