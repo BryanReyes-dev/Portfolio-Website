@@ -31,6 +31,7 @@ This is my main portfolio website. I will be maintaining, updating and managing 
 - Git
 - GitHub
 - VS Code
+- Next.js
 
 ## Repository:
 [View Repository](https://github.com/Dimethyl-tryptamine/Portfolio-Website)
