@@ -45,33 +45,6 @@ This is my main portfolio website. I will be maintaining, updating and managing 
 
 The `agent-files/` directory contains documentation for AI coding agents and is separate from this human-facing README and the application source. `AGENTS.md` contains agent instructions, `ARCHITECTURE.md` records finalized architecture, `Agents_Context.md` stores short-term working context, and `CLAUDE.md` provides the Claude entry point.
 
-## Installation Steps:
-clone the repository:
-
-```bash
-git clone https://github.com/Dimethyl-tryptamine/Portfolio-Website.git
-```
-
-Navigate to the project directory:
-```bash
-cd Portfolio-Website
-```
-
-Install dependencies:
-```bash
-npm install
-```
-
-Start the development server:
-```bash
-npm run dev
-```
-
-Optional - Build for production:
-```bash
-npm run build
-```
-
 ## Challenges & Lessons Learned:
 - Improved my understanding of React component architecture and state management.
 - Learned how to build responsive layouts using a mobile-first approach.
