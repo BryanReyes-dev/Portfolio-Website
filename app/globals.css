@@ -1,47 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
 
-  --primary: #000000;
-  --secondary: #666666;
-  --tertiary: #cccccc;
+  --app-font-body: var(--font-m-plus-1);
+  --app-font-heading: var(--font-space-grotesk);
+  --app-font-mono: var(--font-geist-mono);
+
+  --background: #000000;
+  --foreground: #ffffff;
+
+  
+  /* Neutrals (Dark Mode Surfaces & Borders) */
+  --app-bg-base: #141414;
+  --app-bg-surface: #424141;
+  --app-border-subtle: #646363;
+
+  /* Primary: Core Triadic Anchors */
+  --app-primary-color-0: #8800FF; /* Electric Violet */
+  --app-primary-color-1: #FF0004; /* Neon Red */
+  --app-primary-color-2: #15FF00; /* Acid Green */
+
+  /* Secondary: Direct / Split Complements */
+  --app-secondary-color-0: #EAB308; /* Electric Gold (complements Violet) */
+  --app-secondary-color-1: #00E5FF; /* Electric Cyan (complements Red) */
+  --app-secondary-color-2: #FF007F; /* Hot Magenta (complements Green) */
+
+  /* Tertiary: Supporting Accent Triads */
+  --app-tertiary-color-0: #00F5D4; /* Cyber Aqua */
+  --app-tertiary-color-1: #FF9E00; /* Vivid Amber */
+  --app-tertiary-color-2: #3B82F6; /* Electric Cobalt */
 }
 
+
 @theme inline {
+
+  --font-sans: var(--app-font-body);
+  --font-display: var(--app-font-heading);
+  --font-mono: var(--app-font-mono);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-tertiary: var(--tertiary);
+  --color-app-primary-0: var(--app-primary-color-0);
+  --color-app-primary-1: var(--app-primary-color-1);
+  --color-app-primary-2: var(--app-primary-color-2);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-app-secondary-0: var(--app-secondary-color-0);
+  --color-app-secondary-1: var(--app-secondary-color-1);
+  --color-app-secondary-2: var(--app-secondary-color-2);
+
+  --color-app-tertiary-0: var(--app-tertiary-color-0);
+  --color-app-tertiary-1: var(--app-tertiary-color-1);
+  --color-app-tertiary-2: var(--app-tertiary-color-2);
 }
 
-[data-theme="dark"] {
-  --primary: #ffffff;
-  --secondary: #aaaaaa;
-  --tertiary: #444444;
-}
 
-[data-theme="purple"] {
-  --primary: #a855f7;
-  --secondary: #7c3aed;
-  --tertiary: #c084fc;
-}
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #ffffff;
-    --secondary: #aaaaaa;
-    --tertiary: #444444;
-  }
 }
