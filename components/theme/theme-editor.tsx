@@ -24,7 +24,7 @@ const COLOR_GROUPS = [
 ];
 
 const selectClassName =
-  "mt-1 h-10 w-full rounded-lg border border-app-border-subtle bg-background px-3 font-sans text-sm text-foreground outline-none focus:border-app-secondary-1 focus:ring-2 focus:ring-app-secondary-1/30";
+  "mt-1 h-10 w-full rounded-lg border border-app-border-subtle bg-background px-3 font-body text-sm text-foreground outline-none focus:border-app-secondary-1 focus:ring-2 focus:ring-app-secondary-1/30";
 
 export function ThemeEditor() {
   const [open, setOpen] = React.useState(false);
@@ -43,11 +43,11 @@ export function ThemeEditor() {
             <div>
               <h2
                 id="theme-editor-title"
-                className="font-display text-base font-semibold"
+                className="font-heading text-base font-semibold"
               >
                 Appearance
               </h2>
-              <p className="font-sans text-xs text-app-text-muted">
+              <p className="font-body text-xs text-app-text-muted">
                 Customize colors and fonts
               </p>
             </div>
@@ -74,7 +74,7 @@ export function ThemeEditor() {
           </header>
 
           <div className="space-y-5 overflow-y-auto p-4">
-            <label className="block font-sans text-sm font-medium">
+            <label className="block font-body text-sm font-medium">
               Theme preset
               <select
                 className={selectClassName}
@@ -99,7 +99,7 @@ export function ThemeEditor() {
             </label>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              <label className="block font-sans text-sm font-medium">
+              <label className="block font-body text-sm font-medium">
                 Body font
                 <select
                   className={selectClassName}
@@ -119,7 +119,7 @@ export function ThemeEditor() {
                 </select>
               </label>
 
-              <label className="block font-sans text-sm font-medium">
+              <label className="block font-body text-sm font-medium">
                 Heading font
                 <select
                   className={selectClassName}
@@ -142,7 +142,7 @@ export function ThemeEditor() {
 
             {COLOR_GROUPS.map((group) => (
               <fieldset key={group} className="space-y-2">
-                <legend className="mb-1 font-display text-sm font-semibold text-app-secondary-1">
+                <legend className="mb-1 font-heading text-sm font-semibold text-app-secondary-1">
                   {group}
                 </legend>
 
@@ -152,7 +152,7 @@ export function ThemeEditor() {
                       key={field.key}
                       className="flex min-h-10 items-center justify-between gap-3 rounded-lg px-2 py-1 transition-colors hover:bg-app-bg-surface"
                     >
-                      <span className="font-sans text-sm text-foreground">
+                      <span className="font-body text-sm text-foreground">
                         {field.label}
                       </span>
 
@@ -190,7 +190,7 @@ export function ThemeEditor() {
         aria-expanded={open}
         aria-controls="theme-editor-panel"
         onClick={() => setOpen((current) => !current)}
-        className="inline-flex h-11 items-center gap-2 rounded-full border border-app-border-subtle bg-app-bg-base px-4 font-sans text-sm font-semibold text-foreground shadow-xl transition-colors hover:border-app-primary-0 hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        className="inline-flex h-11 items-center gap-2 rounded-full border border-app-border-subtle bg-app-bg-base px-4 font-body text-sm font-semibold text-foreground shadow-xl transition-colors hover:border-app-primary-0 hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
       >
         <Palette size={17} aria-hidden="true" />
         Appearance

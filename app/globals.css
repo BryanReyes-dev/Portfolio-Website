@@ -40,7 +40,7 @@
 
   /* Active font selections. */
   --app-font-body: var(--font-m-plus-1);
-  --app-font-heading: var(--font-space-grotesk);
+  --app-font-heading: var(--font-mali);
   --app-font-mono: var(--font-geist-mono);
 
   /* shadcn semantic aliases. Components consume roles, not raw palette values. */
@@ -114,9 +114,14 @@
 }
 
 @theme inline {
+  /* Role-based font utilities used by the application. */
+  --font-body: var(--app-font-body);
+  --font-heading: var(--app-font-heading);
+  --font-mono: var(--app-font-mono);
+
+  /* Backward-compatible aliases for components not yet migrated. */
   --font-sans: var(--app-font-body);
   --font-display: var(--app-font-heading);
-  --font-mono: var(--app-font-mono);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -190,12 +195,12 @@
   }
 
   html {
-    @apply font-sans;
+    @apply font-body;
     scroll-behavior: smooth;
   }
 
   body {
-    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+    @apply min-h-screen bg-background font-body text-foreground antialiased;
   }
 
   button:not(:disabled),

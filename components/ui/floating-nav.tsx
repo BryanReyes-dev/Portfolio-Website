@@ -129,7 +129,7 @@ function FloatingNav({
         transition={spring}
         aria-label="Main navigation"
         className={cn(
-          "relative z-10 mx-auto flex h-14 items-center justify-center gap-3 rounded-2xl px-3 sm:px-4",
+          "relative z-10 mx-auto flex h-14 items-center justify-center gap-3 rounded-2xl px-3 font-heading sm:px-4",
           tucked || open
           ? "max-w-5xl border border-transparent bg-transparent shadow-none md:border-app-border-subtle md:bg-background/95 md:shadow-xl md:backdrop-blur-xl"
           : "max-w-7xl border border-transparent bg-transparent"
@@ -233,7 +233,7 @@ function FloatingNav({
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={drawerTransition}
-              className="fixed inset-y-0 left-0 z-65 flex w-[min(86vw,22rem)] flex-col border-r border-app-border-subtle bg-app-bg-base px-6 pb-8 pt-20 text-foreground shadow-2xl md:hidden"
+              className="fixed inset-y-0 left-0 z-65 flex w-[min(86vw,22rem)] flex-col border-r border-app-border-subtle bg-app-bg-base px-6 pb-8 pt-20 font-heading text-foreground shadow-2xl md:hidden"
             >
               {/* Drawer heading and close button */}
               <div className="mb-8 flex items-center justify-between">
@@ -273,7 +273,7 @@ function FloatingNav({
                       duration: reduce ? 0 : 0.2,
                     }}
                     className={cn(
-                      "rounded-xl border px-4 py-3 font-sans text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1",
+                      "rounded-xl border px-4 py-3 font-heading text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1",
                       activeHref === link.href
                         ? "border-app-secondary-0/40 bg-app-secondary-0/10 font-semibold text-white underline decoration-app-primary-0 decoration-2 underline-offset-8"
                         : "border-transparent font-medium text-foreground/80 hover:border-app-border-subtle hover:bg-app-bg-surface hover:text-app-primary-0"

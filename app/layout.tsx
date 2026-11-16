@@ -32,8 +32,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-theme="dark"
-      data-font-body="mali"
-      data-font-heading="space-grotesk"
+      data-font-body="m-plus-1"
+      data-font-heading="mali"
       className={cn(
         mali.variable,
         mPlus1.variable,
@@ -42,7 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistMono.variable
       )}
     >
-      <body className="relative isolate flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
+      <body className="relative isolate flex min-h-dvh flex-col bg-background font-body text-foreground antialiased">
         <ThemeProvider>
           <div className="relative z-10 flex min-h-dvh flex-col">
             <div className="absolute inset-x-0 top-0 z-0 h-dvh">
