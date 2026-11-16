@@ -10,8 +10,8 @@ type ThemePreset = {
 };
 
 export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
-  cyberpunk: {
-    label: "Cyberpunk",
+  NeonViolet: {
+    label: "Neon Violet",
     colors: {
       bgBase: "#141414",
       bgSurface: "#424141",
@@ -33,12 +33,12 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
     },
     fonts: {
       body: "m-plus-1",
-      heading: "space-grotesk",
+      heading: "mali",
     },
   },
 
-  midnight: {
-    label: "Midnight",
+  TropicalMidnight: {
+    label: "Tropical Midnight",
     colors: {
       bgBase: "#111827",
       bgSurface: "#1f2937",
@@ -64,8 +64,8 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
     },
   },
 
-  ember: {
-    label: "Ember",
+  LogCabin: {
+    label: "Log Cabin",
     colors: {
       bgBase: "#211613",
       bgSurface: "#3a2720",
@@ -93,7 +93,7 @@ export const THEME_PRESETS: Record<ThemePresetId, ThemePreset> = {
 };
 
 export const DEFAULT_THEME: ThemeConfig = {
-  presetId: "cyberpunk",
-  colors: { ...THEME_PRESETS.cyberpunk.colors },
-  fonts: { ...THEME_PRESETS.cyberpunk.fonts },
+  presetId: "NeonViolet",
+  colors: { ...THEME_PRESETS.NeonViolet.colors },
+  fonts: { ...THEME_PRESETS.NeonViolet.fonts },
 };

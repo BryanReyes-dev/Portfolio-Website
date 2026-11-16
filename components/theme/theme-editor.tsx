@@ -11,9 +11,9 @@ import {
 import { usePortfolioTheme } from "./theme-provider";
 
 const PRESET_OPTIONS: { id: ThemePresetId; label: string }[] = [
-  { id: "cyberpunk", label: THEME_PRESETS.cyberpunk.label },
-  { id: "midnight", label: THEME_PRESETS.midnight.label },
-  { id: "ember", label: THEME_PRESETS.ember.label },
+  { id: "NeonViolet", label: THEME_PRESETS.NeonViolet.label },
+  { id: "TropicalMidnight", label: THEME_PRESETS.TropicalMidnight.label },
+  { id: "LogCabin", label: THEME_PRESETS.LogCabin.label },
 ];
 
 const COLOR_GROUPS = [
@@ -57,8 +57,8 @@ export function ThemeEditor() {
                 type="button"
                 onClick={resetTheme}
                 className="inline-flex size-9 items-center justify-center rounded-lg text-app-text-muted transition-colors hover:bg-app-bg-surface hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                aria-label="Reset to Cyberpunk preset"
-                title="Reset to Cyberpunk preset"
+                aria-label="Reset to Neon Violet preset"
+                title="Reset to Neon Violet preset"
               >
                 <RotateCcw size={16} aria-hidden="true" />
               </button>

@@ -116,8 +116,7 @@ function FloatingNav({
 
   const closeMenu = () => setOpen(false);
 
-  const ctaClassName =
-    "inline-flex items-center justify-center rounded-xl bg-app-primary-0 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-app-secondary-1 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1";
+  const ctaClassName = "inline-flex items-center justify-center rounded-xl bg-app-primary-0 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-app-secondary-1 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1";
 
   return (
     <div
@@ -192,16 +191,19 @@ function FloatingNav({
         </div>
 
         {/* Mobile hamburger — deliberately remains a hamburger when open */}
+
+        
         <button
           ref={toggle}
           type="button"
-          className="ml-auto inline-flex size-10 items-center justify-center rounded-xl border border-app-border-subtle bg-app-bg-surface text-foreground transition-colors hover:border-app-primary-0 hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1 md:hidden"
+          className="ml-auto inline-flex size-10 items-center justify-center   text-foreground transition-colors hover:border-app-primary-0 hover:text-app-secondary-1  focus-visible:ring-2 focus-visible:ring-app-secondary-1 md:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={open}
           aria-controls={`${id}-menu`}
           onClick={() => setOpen((previous) => !previous)}
         >
-          <MenuIcon size={21} aria-hidden="true" />
+          <MenuIcon size={30} aria-hidden="true" 
+          className="text-app-primary-0"/>
         </button>
       </motion.nav>
 
@@ -235,7 +237,7 @@ function FloatingNav({
             >
               {/* Drawer heading and close button */}
               <div className="mb-8 flex items-center justify-between">
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-app-secondary-1">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-app-primary-0">
                   Navigation
                 </p>
 
@@ -246,9 +248,10 @@ function FloatingNav({
                     toggle.current?.focus();
                   }}
                   aria-label="Close menu"
-                  className="inline-flex size-10 items-center justify-center rounded-xl border border-app-border-subtle bg-app-bg-surface text-foreground transition-colors hover:border-app-primary-0 hover:text-app-primary-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1"
+                  className="inline-flex size-10 items-center justify-center rounded-xl border border-app-secondary-0 bg-app-bg-surface text-foreground transition-colors"
                 >
-                  <XIcon size={21} aria-hidden="true" />
+                  <XIcon size={21} aria-hidden="true" 
+                  className="text-[red]" />
                 </button>
               </div>
 
@@ -272,8 +275,8 @@ function FloatingNav({
                     className={cn(
                       "rounded-xl border px-4 py-3 font-sans text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1",
                       activeHref === link.href
-                        ? "border-app-primary-0/40 bg-app-primary-0/10 font-semibold text-white underline decoration-app-secondary-1 decoration-2 underline-offset-8"
-                        : "border-transparent font-medium text-foreground/80 hover:border-app-border-subtle hover:bg-app-bg-surface hover:text-app-secondary-1"
+                        ? "border-app-secondary-0/40 bg-app-secondary-0/10 font-semibold text-white underline decoration-app-primary-0 decoration-2 underline-offset-8"
+                        : "border-transparent font-medium text-foreground/80 hover:border-app-border-subtle hover:bg-app-bg-surface hover:text-app-primary-0"
                     )}>
                     {link.label}
                   </motion.a>

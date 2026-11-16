@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { FloatingNav } from "@/components/ui/floating-nav";
-import { SiteBackground } from "@/components/site-background";
+import { SiteBackground } from "@/components/hero-background";
 import { ThemeEditor } from "@/components/theme/theme-editor";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { cn } from "@/lib/utils";
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-theme="dark"
-      data-font-body="m-plus-1"
+      data-font-body="mali"
       data-font-heading="space-grotesk"
       className={cn(
         mali.variable,
@@ -43,10 +43,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="relative isolate flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
-        <SiteBackground />
-
         <ThemeProvider>
           <div className="relative z-10 flex min-h-dvh flex-col">
+            <div className="absolute inset-x-0 top-0 z-0 h-dvh">
+              <SiteBackground />
+            </div>
+
             <FloatingNav
               links={[
                 { label: "Home", href: "#home" },
@@ -57,6 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               cta={{ label: "Contact", href: "#contact" }}
               secondary={null}
             />
+
             {children}
           </div>
           <ThemeEditor />

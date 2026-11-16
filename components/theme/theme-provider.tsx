@@ -156,7 +156,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   );
 
   const resetTheme = React.useCallback(() => {
-    setPreset("cyberpunk");
+    setPreset("NeonViolet");
   }, [setPreset]);
 
   const contextValue = React.useMemo(

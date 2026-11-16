@@ -32,7 +32,7 @@ export const FONT_OPTIONS = [
 ] as const;
 
 export type ThemeFont = (typeof FONT_OPTIONS)[number]["value"];
-export type ThemePresetId = "cyberpunk" | "midnight" | "ember";
+export type ThemePresetId = "NeonViolet" | "TropicalMidnight" | "LogCabin" ;
 
 export type ThemeConfig = {
   presetId: ThemePresetId | "custom";

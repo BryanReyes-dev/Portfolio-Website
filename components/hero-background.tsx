@@ -18,7 +18,7 @@ export function SiteBackground() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
     >
       {/* One tile on phones, two side by side on tablets, and a 2-by-2 grid on desktop. */}
       <div className="grid h-full w-full grid-cols-1 grid-rows-1 sm:grid-cols-2 sm:grid-rows-1 lg:grid-cols-2 lg:grid-rows-2">
