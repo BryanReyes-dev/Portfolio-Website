@@ -22,12 +22,14 @@ function HeroBackgroundTile({
   className?: string;
 }) {
   return (
-    <div className={`min-w-0 ${className}`}>
+    <div className={`min-w-0 overflow-hidden ${className}`}>
+      {/* The native image dimensions preserve the source aspect ratio. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/herobg.jpg"
         alt=""
-        className="block h-auto w-full"
+        className="block h-auto w-full select-none"
+        draggable={false}
       />
     </div>
   );
@@ -36,57 +38,81 @@ function HeroBackgroundTile({
 export default function Home() {
   return (
     <main className="flex-1">
-      
       <section
         id="home"
-        className="relative isolate flex min-h-[calc(100svh-5rem)] scroll-mt-24 items-center overflow-hidden"
+        className="relative isolate min-h-[calc(100svh-5rem)] scroll-mt-24 overflow-hidden"
       >
-        <p className="mb-5 font-mono text-xs uppercase tracking-[0.35em] text-app-tertiary-0">
-          Bryan Reyes / Developer Portfolio
-        </p>
+        {/* Responsive image grid: one tile on phones, two on tablets, four on desktop. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 z-0"
+        >
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <HeroBackgroundTile />
+            <HeroBackgroundTile className="hidden sm:block" />
+            <HeroBackgroundTile className="hidden lg:block" />
+            <HeroBackgroundTile className="hidden lg:block" />
 
-        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-7xl">
-          Creative, technical,{" "}
-          <span className="text-primary">innovative.</span>
-        </h1>
-
-        <p className="mt-6 max-w-2xl font-sans text-base leading-8 text-app-text-muted sm:text-lg">
-          A place for my software projects, experiments, and the things I am
-          learning to build. Use the appearance control to explore the color
-          and typography system.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="#projects"
-            className="rounded-xl bg-primary px-5 py-3 font-sans text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            Explore projects
-          </a>
-          <a
-            href="#about"
-            className="rounded-xl border border-app-border-subtle px-5 py-3 font-sans text-sm font-semibold text-foreground transition-colors hover:border-app-secondary-1 hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            About this portfolio
-          </a>
+            {/* This overlay is anchored to the grid's bottom edge and sits above its tiles. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/herobg-bottom.png"
+              alt=""
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-10 block h-auto w-full select-none"
+              draggable={false}
+            />
+          </div>
         </div>
 
-        <div className="mt-16 grid gap-3 sm:grid-cols-3">
-          {showcaseCards.map((card) => (
-            <article
-              key={card.title}
-              className="rounded-2xl border border-app-border-subtle bg-app-bg-base p-5"
+        {/* Keep all hero content in one vertical column, above the image grid. */}
+        <div className="relative z-20 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl flex-col justify-center px-6 py-24">
+          <p className="mb-5 font-mono text-xs uppercase tracking-[0.35em] text-app-tertiary-0">
+            Bryan Reyes / Developer Portfolio
+          </p>
+
+          <h1 className="max-w-4xl font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-7xl">
+            Creative, technical,{" "}
+            <span className="text-primary">innovative.</span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl font-sans text-base leading-8 text-app-text-muted sm:text-lg">
+            A place for my software projects, experiments, and the things I am
+            learning to build. Use the appearance control to explore the color
+            and typography system.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              className="rounded-xl bg-primary px-5 py-3 font-sans text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <div
-                className={"mb-4 inline-flex rounded-lg px-3 py-1.5 font-mono text-xs font-semibold " + card.className}
+              Explore projects
+            </a>
+            <a
+              href="#about"
+              className="rounded-xl border border-app-border-subtle px-5 py-3 font-sans text-sm font-semibold text-foreground transition-colors hover:border-app-secondary-1 hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              About this portfolio
+            </a>
+          </div>
+
+          <div className="mt-16 grid gap-3 sm:grid-cols-3">
+            {showcaseCards.map((card) => (
+              <article
+                key={card.title}
+                className="rounded-2xl border border-app-border-subtle bg-app-bg-base p-5"
               >
-                {card.title}
-              </div>
-              <p className="font-sans text-sm leading-6 text-app-text-muted">
-                {card.description}
-              </p>
-            </article>
-          ))}
+                <div
+                  className={"mb-4 inline-flex rounded-lg px-3 py-1.5 font-mono text-xs font-semibold " + card.className}
+                >
+                  {card.title}
+                </div>
+                <p className="font-sans text-sm leading-6 text-app-text-muted">
+                  {card.description}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
