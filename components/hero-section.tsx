@@ -16,7 +16,7 @@ export function HeroSection() {
             <defs>
               <path
                 id="hero-top-arc"
-                d="M 34,160 A 126,126 0 0,1 286,160"
+                d="M 34,160 A 126,126 0 0,0 286,160"
                 fill="none"
               />
               <path
