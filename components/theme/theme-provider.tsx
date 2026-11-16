@@ -86,6 +86,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         const parsedTheme = parseStoredTheme(savedTheme);
 
         if (parsedTheme) {
+          // Intentional hydration: localStorage is only available in the browser.
+          // The server and initial client render must use the same default theme.
+          // eslint-disable-next-line react-hooks/set-state-in-effect
           setTheme(parsedTheme);
         }
       }
