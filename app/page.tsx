@@ -16,9 +16,27 @@ const showcaseCards = [
   },
 ];
 
+function HeroBackgroundTile({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <div className={`min-w-0 ${className}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/herobg.jpg"
+        alt=""
+        className="block h-auto w-full"
+      />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main className="flex-1">
+      
       <section
         id="home"
         className="relative isolate flex min-h-[calc(100svh-5rem)] scroll-mt-24 items-center overflow-hidden"
