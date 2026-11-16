@@ -5,63 +5,80 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-
   color-scheme: dark;
 
+  /* The main page background is fixed and intentionally not customizable. */
   --background: #000000;
-  --foreground: #ffffff;
 
-  --card: var(--app-bg-surface);
-  --card-foreground: var(--foreground);
-
-  --popover: var(--app-bg-surface);
-  --popover-foreground: var(--foreground);
-
-  --primary: var(--app-primary-color-0);
-  --primary-foreground: #ffffff;
-
-  --secondary: var(--app-secondary-color-1);
-  --secondary-foreground: #000000;
-
-  --muted: var(--app-bg-surface);
-  --muted-foreground: #cccccc;
-
-  --accent: var(--app-tertiary-color-0);
-  --accent-foreground: #000000;
-
-  --destructive: var(--app-primary-color-1);
-
-  --border: var(--app-border-subtle);
-  --input: var(--app-border-subtle);
-  --ring: var(--app-secondary-color-1);
-
-  --radius: 0.625rem;
-
-  --app-font-body: var(--font-m-plus-1);
-  --app-font-heading: var(--font-space-grotesk);
-  --app-font-mono: var(--font-geist-mono);
-
-  /* Neutrals (Dark Mode Surfaces & Borders) */
+  /* Editable neutral palette. */
   --app-bg-base: #141414;
   --app-bg-surface: #424141;
   --app-border-subtle: #646363;
 
-  /* Primary: Core Triadic Anchors */
-  --app-primary-color-0: #8800FF; /* Electric Violet */
-  --app-primary-color-1: #FF0004; /* Neon Red */
-  --app-primary-color-2: #15FF00; /* Acid Green */
+  /* Editable text palette. */
+  --app-text-primary: #ffffff;
+  --app-text-muted: #cccccc;
+  --app-text-on-primary: #ffffff;
+  --app-text-on-secondary: #000000;
+  --app-text-on-accent: #000000;
 
-  /* Secondary: Direct / Split Complements */
-  --app-secondary-color-0: #EAB308; /* Electric Gold (complements Violet) */
-  --app-secondary-color-1: #00E5FF; /* Electric Cyan (complements Red) */
-  --app-secondary-color-2: #FF007F; /* Hot Magenta (complements Green) */
+  /* Primary palette. */
+  --app-primary-color-0: #8800ff;
+  --app-primary-color-1: #ff0004;
+  --app-primary-color-2: #15ff00;
 
-  /* Tertiary: Supporting Accent Triads */
-  --app-tertiary-color-0: #00F5D4; /* Cyber Aqua */
-  --app-tertiary-color-1: #FF9E00; /* Vivid Amber */
-  --app-tertiary-color-2: #3B82F6; /* Electric Cobalt */
+  /* Secondary palette. */
+  --app-secondary-color-0: #eab308;
+  --app-secondary-color-1: #00e5ff;
+  --app-secondary-color-2: #ff007f;
+
+  /* Tertiary palette. */
+  --app-tertiary-color-0: #00f5d4;
+  --app-tertiary-color-1: #ff9e00;
+  --app-tertiary-color-2: #3b82f6;
+
+  /* Active font selections. */
+  --app-font-body: var(--font-m-plus-1);
+  --app-font-heading: var(--font-space-grotesk);
+  --app-font-mono: var(--font-geist-mono);
+
+  /* shadcn semantic aliases. Components consume roles, not raw palette values. */
+  --foreground: var(--app-text-primary);
+  --card: var(--app-bg-surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--app-bg-surface);
+  --popover-foreground: var(--foreground);
+  --primary: var(--app-primary-color-0);
+  --primary-foreground: var(--app-text-on-primary);
+  --secondary: var(--app-secondary-color-1);
+  --secondary-foreground: var(--app-text-on-secondary);
+  --muted: var(--app-bg-surface);
+  --muted-foreground: var(--app-text-muted);
+  --accent: var(--app-tertiary-color-0);
+  --accent-foreground: var(--app-text-on-accent);
+  --destructive: var(--app-primary-color-1);
+  --border: var(--app-border-subtle);
+  --input: var(--app-border-subtle);
+  --ring: var(--app-secondary-color-1);
+  --radius: 0.625rem;
+
+  /* shadcn chart and sidebar aliases. */
+  --chart-1: var(--app-primary-color-0);
+  --chart-2: var(--app-secondary-color-1);
+  --chart-3: var(--app-tertiary-color-0);
+  --chart-4: var(--app-secondary-color-0);
+  --chart-5: var(--app-tertiary-color-2);
+  --sidebar: var(--app-bg-base);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
 }
 
+/* Body font choices. */
 :root[data-font-body="mali"] {
   --app-font-body: var(--font-mali);
 }
@@ -78,9 +95,25 @@
   --app-font-body: var(--font-manrope);
 }
 
-@theme inline {
+/* Heading font choices. */
+:root[data-font-heading="mali"] {
+  --app-font-heading: var(--font-mali);
+}
 
-  --font-sans: var(--font-sans);
+:root[data-font-heading="m-plus-1"] {
+  --app-font-heading: var(--font-m-plus-1);
+}
+
+:root[data-font-heading="space-grotesk"] {
+  --app-font-heading: var(--font-space-grotesk);
+}
+
+:root[data-font-heading="manrope"] {
+  --app-font-heading: var(--font-manrope);
+}
+
+@theme inline {
+  --font-sans: var(--app-font-body);
   --font-display: var(--app-font-heading);
   --font-mono: var(--app-font-mono);
 
@@ -90,6 +123,12 @@
   --color-app-bg-base: var(--app-bg-base);
   --color-app-bg-surface: var(--app-bg-surface);
   --color-app-border-subtle: var(--app-border-subtle);
+
+  --color-app-text-primary: var(--app-text-primary);
+  --color-app-text-muted: var(--app-text-muted);
+  --color-app-text-on-primary: var(--app-text-on-primary);
+  --color-app-text-on-secondary: var(--app-text-on-secondary);
+  --color-app-text-on-accent: var(--app-text-on-accent);
 
   --color-app-primary-0: var(--app-primary-color-0);
   --color-app-primary-1: var(--app-primary-color-1);
@@ -102,7 +141,7 @@
   --color-app-tertiary-0: var(--app-tertiary-color-0);
   --color-app-tertiary-1: var(--app-tertiary-color-1);
   --color-app-tertiary-2: var(--app-tertiary-color-2);
-  --font-heading: var(--font-sans);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -111,11 +150,13 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar: var(--sidebar);
+
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -132,6 +173,7 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -141,86 +183,22 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-body {
-  background-color: var(--background);
-}
-
-.dark {
-
-  --background: oklch(0.145 0 0);
-
-  --foreground: oklch(0.985 0 0);
-
-  --card: oklch(0.205 0 0);
-
-  --card-foreground: oklch(0.985 0 0);
-
-  --popover: oklch(0.205 0 0);
-
-  --popover-foreground: oklch(0.985 0 0);
-
-  --primary: oklch(0.922 0 0);
-
-  --primary-foreground: oklch(0.205 0 0);
-
-  --secondary: oklch(0.269 0 0);
-
-  --secondary-foreground: oklch(0.985 0 0);
-
-  --muted: oklch(0.269 0 0);
-
-  --muted-foreground: oklch(0.708 0 0);
-
-  --accent: oklch(0.269 0 0);
-
-  --accent-foreground: oklch(0.985 0 0);
-
-  --destructive: oklch(0.704 0.191 22.216);
-
-  --border: oklch(1 0 0 / 10%);
-
-  --input: oklch(1 0 0 / 15%);
-
-  --ring: oklch(0.556 0 0);
-
-  --chart-1: oklch(0.87 0 0);
-
-  --chart-2: oklch(0.556 0 0);
-
-  --chart-3: oklch(0.439 0 0);
-
-  --chart-4: oklch(0.371 0 0);
-
-  --chart-5: oklch(0.269 0 0);
-
-  --sidebar: oklch(0.205 0 0);
-
-  --sidebar-foreground: oklch(0.985 0 0);
-
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-
-  --sidebar-accent: oklch(0.269 0 0);
-
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-
-  --sidebar-border: oklch(1 0 0 / 10%);
-
-  --sidebar-ring: oklch(0.556 0 0);
-}
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  button:not(:disabled), [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
+
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
   }
 }
