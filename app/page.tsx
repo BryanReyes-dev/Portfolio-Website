@@ -16,56 +16,14 @@ const showcaseCards = [
   },
 ];
 
-function HeroBackgroundTile({
-  className = "",
-}: {
-  className?: string;
-}) {
-  return (
-    <div className={`min-w-0 overflow-hidden ${className}`}>
-      {/* The native image dimensions preserve the source aspect ratio. */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/herobg.jpg"
-        alt=""
-        className="block h-auto w-full select-none"
-        draggable={false}
-      />
-    </div>
-  );
-}
-
 export default function Home() {
   return (
-    <main className="flex-1">
+    <main className="relative z-10 flex-1">
       <section
         id="home"
-        className="relative isolate min-h-[calc(100svh-5rem)] scroll-mt-24 overflow-hidden"
+        className="relative min-h-[calc(100svh-5rem)] scroll-mt-24"
       >
-        {/* Responsive image grid: one tile on phones, two on tablets, four on desktop. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 z-0"
-        >
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            <HeroBackgroundTile />
-            <HeroBackgroundTile className="hidden sm:block" />
-            <HeroBackgroundTile className="hidden lg:block" />
-            <HeroBackgroundTile className="hidden lg:block" />
-
-            {/* This overlay is anchored to the grid's bottom edge and sits above its tiles. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/herobg-bottom.png"
-              alt=""
-              className="pointer-events-none absolute inset-x-0 bottom-0 z-10 block h-auto w-full select-none"
-              draggable={false}
-            />
-          </div>
-        </div>
-
-        {/* Keep all hero content in one vertical column, above the image grid. */}
-        <div className="relative z-20 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl flex-col justify-center px-6 py-24">
+        <div className="relative z-10 mx-auto flex min-h-[calc(100svh-5rem)] w-full max-w-6xl flex-col justify-center px-6 py-24">
           <p className="mb-5 font-mono text-xs uppercase tracking-[0.35em] text-app-tertiary-0">
             Bryan Reyes / Developer Portfolio
           </p>
@@ -118,7 +76,7 @@ export default function Home() {
 
       <section
         id="about"
-        className="scroll-mt-24 border-t border-app-border-subtle bg-app-bg-base"
+        className="scroll-mt-24 border-t border-app-border-subtle"
       >
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-app-secondary-1">
@@ -153,7 +111,7 @@ export default function Home() {
 
       <section
         id="skills"
-        className="scroll-mt-24 border-t border-app-border-subtle bg-app-bg-base"
+        className="scroll-mt-24 border-t border-app-border-subtle"
       >
         <div className="mx-auto max-w-6xl px-6 py-24">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-app-secondary-1">

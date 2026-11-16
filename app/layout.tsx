@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { FloatingNav } from "@/components/ui/floating-nav";
+import { SiteBackground } from "@/components/site-background";
 import { ThemeEditor } from "@/components/theme/theme-editor";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { cn } from "@/lib/utils";
@@ -41,19 +42,23 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistMono.variable
       )}
     >
-      <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
+      <body className="relative isolate flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
+        <SiteBackground />
+
         <ThemeProvider>
-          <FloatingNav
-            links={[
-              { label: "Home", href: "#home" },
-              { label: "About", href: "#about" },
-              { label: "Projects", href: "#projects" },
-              { label: "Skills", href: "#skills" },
-            ]}
-            cta={{ label: "Contact", href: "#contact" }}
-            secondary={null}
-          />
-          {children}
+          <div className="relative z-10 flex min-h-dvh flex-col">
+            <FloatingNav
+              links={[
+                { label: "Home", href: "#home" },
+                { label: "About", href: "#about" },
+                { label: "Projects", href: "#projects" },
+                { label: "Skills", href: "#skills" },
+              ]}
+              cta={{ label: "Contact", href: "#contact" }}
+              secondary={null}
+            />
+            {children}
+          </div>
           <ThemeEditor />
         </ThemeProvider>
       </body>
