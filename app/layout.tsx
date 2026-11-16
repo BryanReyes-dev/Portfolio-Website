@@ -1,18 +1,16 @@
-
 import type { Metadata, Viewport } from "next";
 import { FloatingNav } from "@/components/ui/floating-nav";
+import { ThemeEditor } from "@/components/theme/theme-editor";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { cn } from "@/lib/utils";
 import {
+  geistMono,
   mali,
+  manrope,
   mPlus1,
   spaceGrotesk,
-  manrope,
-  geistMono,
 } from "./fonts";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: {
@@ -31,27 +29,33 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-    
       lang="en"
       data-theme="dark"
       data-font-body="m-plus-1"
       data-font-heading="space-grotesk"
-      className={cn(mali.variable, mPlus1.variable, spaceGrotesk.variable, manrope.variable, geistMono.variable, "font-sans", inter.variable)}
+      className={cn(
+        mali.variable,
+        mPlus1.variable,
+        spaceGrotesk.variable,
+        manrope.variable,
+        geistMono.variable
+      )}
     >
-    
-      <body className="min-h-dvh flex flex-col font-sans antialiased">
-        <FloatingNav
-          
-          links={[
-            { label: "Home", href: "#home" },
-            { label: "About", href: "#about" },
-            { label: "Projects", href: "#projects" },
-            { label: "Skills", href: "#skills" },
-          ]}
-          cta={{ label: "Contact", href: "#contact" }}
-          secondary={null}
-        />
-        {children}
+      <body className="flex min-h-dvh flex-col bg-background font-sans text-foreground antialiased">
+        <ThemeProvider>
+          <FloatingNav
+            links={[
+              { label: "Home", href: "#home" },
+              { label: "About", href: "#about" },
+              { label: "Projects", href: "#projects" },
+              { label: "Skills", href: "#skills" },
+            ]}
+            cta={{ label: "Contact", href: "#contact" }}
+            secondary={null}
+          />
+          {children}
+          <ThemeEditor />
+        </ThemeProvider>
       </body>
     </html>
   );
