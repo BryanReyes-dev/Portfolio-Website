@@ -176,21 +176,7 @@ export function ThemeEditor() {
               </fieldset>
             ))}
 
-            <div className="rounded-xl border border-app-border-subtle bg-background p-3">
-              <p className="font-display text-base font-semibold text-foreground">
-                Live preview
-              </p>
-              <p className="mt-1 font-sans text-sm text-app-text-muted">
-                Your selected body and heading fonts update throughout the
-                portfolio.
-              </p>
-              <button
-                type="button"
-                className="mt-3 rounded-lg bg-primary px-3 py-2 font-sans text-sm font-semibold text-primary-foreground"
-              >
-                Primary button
-              </button>
-            </div>
+            
 
             <p className="text-center font-mono text-[10px] uppercase tracking-wider text-app-text-muted">
               {isReady ? "Preferences saved in this browser" : "Loading preferences"}

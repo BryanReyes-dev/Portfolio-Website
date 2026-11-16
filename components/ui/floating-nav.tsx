@@ -132,8 +132,8 @@ function FloatingNav({
         className={cn(
           "relative z-10 mx-auto flex h-14 items-center justify-center gap-3 rounded-2xl px-3 sm:px-4",
           tucked || open
-            ? "max-w-5xl border border-app-border-subtle bg-background/95 shadow-xl backdrop-blur-xl"
-            : "max-w-7xl border border-transparent bg-transparent"
+          ? "max-w-5xl border border-transparent bg-transparent shadow-none md:border-app-border-subtle md:bg-background/95 md:shadow-xl md:backdrop-blur-xl"
+          : "max-w-7xl border border-transparent bg-transparent"
         )}
       >
         {/* Desktop links */}

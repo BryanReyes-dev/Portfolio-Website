@@ -21,7 +21,7 @@ export default function Home() {
     <main className="flex-1">
       <section
         id="home"
-        className="mx-auto flex min-h-[calc(100svh-5rem)] max-w-6xl scroll-mt-24 flex-col justify-center px-6 py-24"
+        className="relative isolate flex min-h-[calc(100svh-5rem)] scroll-mt-24 items-center overflow-hidden"
       >
         <p className="mb-5 font-mono text-xs uppercase tracking-[0.35em] text-app-tertiary-0">
           Bryan Reyes / Developer Portfolio
