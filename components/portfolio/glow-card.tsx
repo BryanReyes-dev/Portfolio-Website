@@ -8,17 +8,10 @@ export function GlowCard({ className, style, ...props }: GlowCardProps) {
     <article
       {...props}
       className={cn(
-        "rounded-2xl border-[1.5px] border-solid p-5 backdrop-blur-sm transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_10px_2px_color-mix(in_srgb,var(--app-primary-color-0)_75%,transparent)] sm:p-6",
+        "rounded-2xl border-[0.1rem] border-solid border-app-primary-0 bg-app-bg-surface/85 p-5 shadow-[0_0_5px_1px_color-mix(in_srgb,var(--app-primary-color-0)_80%,transparent)] backdrop-blur-sm transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_10px_2px_color-mix(in_srgb,var(--app-primary-color-0)_85%,transparent)] sm:p-6",
         className
       )}
-      style={{
-        borderColor: "var(--app-primary-color-0)",
-        backgroundColor:
-          "color-mix(in srgb, var(--app-bg-surface) 86%, var(--background))",
-        boxShadow:
-          "0 0 5px 1px color-mix(in srgb, var(--app-primary-color-0) 80%, transparent)",
-        ...style,
-      }}
+      style={style}
     />
   );
 }
