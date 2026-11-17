@@ -8,7 +8,7 @@ export function HeroSection() {
     >
       <div className="flex w-full max-w-4xl flex-col items-center text-center">
         {/* Orbital Badge + Avatar */}
-        <div className="relative flex size-[min(84vw,21rem)] items-center justify-center transition-transform duration-700 md:translate-x-[16.6667vw]">
+        <div className="relative flex size-[min(84vw,21rem)] items-center justify-center transition-[width,height,transform] duration-700 md:size-[clamp(22rem,38vw,34rem)] md:translate-x-[16.6667vw]">
           <span className="sr-only">
             Full stack developer specializing in AI integration.
           </span>
@@ -62,17 +62,17 @@ export function HeroSection() {
           {/* Subtle Ambient Glow Behind Avatar */}
           <div
             aria-hidden="true"
-            className="absolute size-[min(56vw,14rem)] rounded-full bg-app-primary-0/30 blur-2xl"
+            className="absolute size-[min(56vw,14rem)] rounded-full bg-app-primary-0/30 blur-2xl md:size-[clamp(15rem,27vw,24rem)]"
           />
 
           {/* Avatar with Primary Color Background */}
-          <div className="relative size-[min(58vw,14.5rem)] overflow-hidden rounded-full bg-app-primary-0 shadow-[0_0_24px_color-mix(in_srgb,var(--app-primary-color-0)_45%,transparent)] transition-transform duration-500 hover:scale-[1.02]">
+          <div className="relative size-[min(58vw,14.5rem)] overflow-hidden rounded-full bg-app-primary-0 shadow-[0_0_24px_color-mix(in_srgb,var(--app-primary-color-0)_45%,transparent)] transition-[width,height,transform] duration-500 hover:scale-[1.02] md:size-[clamp(14rem,25vw,22rem)]">
             <Image
               src="/profile-avatar.png"
               alt="Stylized illustration of a camera operator with a green geometric head"
               fill
               priority
-              sizes="(max-width: 640px) 58vw, 232px"
+              sizes="(min-width: 896px) 25vw, (min-width: 768px) 224px, 58vw"
               className="object-contain"
             />
           </div>
