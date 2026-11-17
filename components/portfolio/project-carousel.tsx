@@ -113,7 +113,7 @@ export function ProjectCarousel({ projects }: { projects: ProjectCardData[] }) {
     if (!viewport) return;
     viewport.scrollTo({
       left: viewport.clientWidth * index,
-      behavior: reduceMotion ? "instant" : "smooth",
+      behavior: reduceMotion ? "auto" : "smooth",
     });
   };
 
@@ -126,8 +126,10 @@ export function ProjectCarousel({ projects }: { projects: ProjectCardData[] }) {
       <div
         ref={viewportRef}
         onScroll={updateActiveIndex}
-        aria-label="Featured projects"
-        className="flex flex-col gap-5 md:flex-row md:gap-0 md:overflow-x-auto md:snap-x md:snap-mandatory md:overscroll-x-contain md:scrollbar-none"
+        role="region"
+        tabIndex={0}
+        aria-label="Featured projects carousel"
+        className="flex flex-col gap-5 md:flex-row md:gap-0 md:overflow-x-auto md:snap-x md:snap-mandatory md:overscroll-x-contain md:[scrollbar-width:none] md:[&::-webkit-scrollbar]:hidden"
       >
         {projects.map((project) => (
           <div
