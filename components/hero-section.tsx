@@ -20,12 +20,12 @@ export function HeroSection() {
             <defs>
               <path
                 id="hero-top-arc"
-                d="M 28 180 A 152 152 0 0 1 332 180"
+                d="M 36 180 A 144 144 0 0 1 324 180"
                 fill="none"
               />
               <path
                 id="hero-bottom-arc"
-                d="M 28 180 A 152 152 0 0 0 332 180"
+                d="M 36 180 A 144 144 0 0 0 324 180"
                 fill="none"
               />
             </defs>
