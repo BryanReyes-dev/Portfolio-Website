@@ -116,7 +116,7 @@ function FloatingNav({
 
   const closeMenu = () => setOpen(false);
 
-  const ctaClassName = "inline-flex items-center justify-center rounded-xl bg-app-primary-0 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-app-secondary-1 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1";
+  const ctaClassName = "inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-xl bg-app-primary-0 px-[clamp(0.7rem,0.95vw,1rem)] py-[clamp(0.45rem,0.55vw,0.65rem)] text-[clamp(0.75rem,calc(0.68rem+0.35vw),1rem)] font-semibold text-white transition-colors hover:bg-app-secondary-1 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1";
 
   return (
     <div
@@ -129,7 +129,7 @@ function FloatingNav({
         transition={spring}
         aria-label="Main navigation"
         className={cn(
-          "relative z-10 mx-auto flex h-14 items-center justify-center gap-3 rounded-2xl px-3 font-heading sm:px-4",
+          "relative z-10 mx-auto flex h-14 w-full items-center justify-between gap-3 rounded-2xl px-3 font-heading sm:px-4",
           tucked || open
           ? "max-w-5xl border border-transparent bg-transparent shadow-none md:border-app-border-subtle md:bg-background/95 md:shadow-xl md:backdrop-blur-xl"
           : "max-w-7xl border border-transparent bg-transparent"
@@ -137,7 +137,7 @@ function FloatingNav({
       >
         {/* Desktop links */}
         <ul
-          className="hidden items-center justify-center md:flex"
+          className="hidden items-center justify-start gap-[clamp(0.15rem,0.5vw,0.65rem)] md:flex"
           onMouseLeave={() => setHover(null)}
         >
           {links.map((link) => (
@@ -147,7 +147,7 @@ function FloatingNav({
                 onClick={closeMenu}
                 onMouseEnter={() => setHover(link.href)}
                 onFocus={() => setHover(link.href)}
-                className="relative block rounded-lg px-4 py-2 text-sm text-foreground/70 outline-none transition-colors hover:text-app-secondary-1 focus-visible:text-app-secondary-1 focus-visible:ring-2 focus-visible:ring-app-secondary-1"
+                className="relative block whitespace-nowrap rounded-lg px-[clamp(0.55rem,0.85vw,1rem)] py-2 text-[clamp(0.75rem,calc(0.68rem+0.35vw),1rem)] text-foreground/70 outline-none transition-colors hover:text-app-secondary-1 focus-visible:text-app-secondary-1 focus-visible:ring-2 focus-visible:ring-app-secondary-1"
               >
                 {hover === link.href && (
                   <motion.span
@@ -164,11 +164,11 @@ function FloatingNav({
         </ul>
 
         {/* Desktop actions */}
-        <div className="ml-auto hidden items-center gap-2 md:flex">
+        <div className="ml-auto hidden shrink-0 items-center gap-[clamp(0.25rem,0.65vw,0.75rem)] md:flex">
           {secondary && (
             <a
               href={secondary.href ?? "#"}
-              className="rounded-lg px-3 py-2 text-sm text-foreground/70 transition-colors hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1"
+              className="whitespace-nowrap rounded-lg px-[clamp(0.5rem,0.75vw,0.875rem)] py-2 text-[clamp(0.75rem,calc(0.68rem+0.35vw),1rem)] text-foreground/70 transition-colors hover:text-app-secondary-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-secondary-1"
             >
               {secondary.label}
             </a>
