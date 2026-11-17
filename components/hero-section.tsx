@@ -34,7 +34,7 @@ export function HeroSection() {
 
             <text
               fill="currentColor"
-              className="font-heading text-[20px] font-bold tracking-[0.24em] text-app-text-muted uppercase"
+              className="font-heading text-[20px] font-bold tracking-[0.24em] text-app-secondary-0 uppercase"
             >
               <textPath
                 href="#hero-top-arc"
@@ -47,7 +47,7 @@ export function HeroSection() {
 
             <text
               fill="currentColor"
-              className="font-heading text-[20px] font-bold tracking-[0.22em] text-app-text-muted uppercase"
+              className="font-heading text-[20px] font-bold tracking-[0.22em] text-app-secondary-1 uppercase"
             >
               <textPath
                 href="#hero-bottom-arc"
