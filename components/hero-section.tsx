@@ -68,7 +68,7 @@ export function HeroSection() {
             </text>
           </svg>
 
-          <div className="relative size-[min(62vw,15rem)] overflow-hidden rounded-full bg-app-primary-0 p-3 shadow-[0_0_55px_color-mix(in_srgb,var(--app-primary-color-0)_35%,transparent)]">
+          <div className="relative size-[min(62vw,15rem)] overflow-hidden rounded-full bg-app-primary-0 p-[5px] shadow-[0_0_12px_color-mix(in_srgb,var(--app-primary-color-0)_75%,transparent),0_0_32px_color-mix(in_srgb,var(--app-primary-color-0)_45%,transparent)]">
             <div className="relative size-full overflow-hidden rounded-full">
               <Image
                 src="/profile-avatar.png"
