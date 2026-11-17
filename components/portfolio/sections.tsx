@@ -76,16 +76,7 @@ const projects: ProjectCardData[] = [
     technologies: ["Astro", "React", "TypeScript", "Wix AI", "Zod"],
     sourceUrl: "https://github.com/BryanReyes-dev/Wix-Blog-Generator-App",
   },
-  {
-    name: "Search Project",
-    category: "Search and filtering application",
-    description:
-      "A search and filtering application built with Next.js, TypeScript, and Axios, featuring text search, tag filtering, range filters, and API-driven data fetching.",
-    image: "/searchcover.png",
-    imageAlt: "Search Project application preview",
-    technologies: ["Next.js", "TypeScript", "Axios", "API routes"],
-    liveUrl: "https://search-project-wastaken.netlify.app/",
-  },
+  
 ];
 
 const skillGroups = [
@@ -352,36 +343,4 @@ export function PortfolioSection() {
   );
 }
 
-export function ContactSection() {
-  return (
-    <section
-      id="contact"
-      className="scroll-mt-28 px-5 pb-24 pt-16 sm:px-8 sm:pb-28 sm:pt-20"
-    >
-      <div className="mx-auto max-w-6xl">
-        <GlowCard className="flex flex-col gap-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
-          <div>
-            <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-app-secondary-1">
-              Get in touch
-            </p>
-            <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
-              Have a project in mind?
-            </h2>
-            <p className="mt-2 font-body text-sm leading-7 text-app-text-muted">
-              I am always interested in thoughtful projects and opportunities
-              to build useful software.
-            </p>
-          </div>
-          <a
-            href="https://github.com/BryanReyes-dev"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex shrink-0 items-center justify-center rounded-lg border border-app-primary-0 bg-app-bg-base px-5 py-3 font-heading text-sm font-semibold text-foreground shadow-[0_0_5px_color-mix(in_srgb,var(--app-primary-color-0)_65%,transparent)] transition-colors hover:bg-app-primary-0"
-          >
-            Connect on GitHub ↗
-          </a>
-        </GlowCard>
-      </div>
-    </section>
-  );
-}
+
