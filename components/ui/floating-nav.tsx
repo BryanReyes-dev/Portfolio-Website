@@ -147,7 +147,7 @@ function FloatingNav({
                 onClick={closeMenu}
                 onMouseEnter={() => setHover(link.href)}
                 onFocus={() => setHover(link.href)}
-                className="relative block whitespace-nowrap rounded-lg px-[clamp(0.55rem,0.85vw,1rem)] py-2 text-[clamp(0.75rem,calc(0.68rem+0.35vw),1rem)] text-foreground/70 outline-none transition-colors hover:text-app-secondary-1 focus-visible:text-app-secondary-1 focus-visible:ring-2 focus-visible:ring-app-secondary-1"
+                className="relative block whitespace-nowrap rounded-lg px-[clamp(0.55rem,0.85vw,1rem)] py-2 text-[clamp(0.75rem,calc(0.68rem+0.35vw),1rem)] text-app-primary-0 outline-none transition-colors hover:text-app-secondary-1 focus-visible:text-app-secondary-1 focus-visible:ring-2 focus-visible:ring-app-secondary-1"
               >
                 {hover === link.href && (
                   <motion.span
