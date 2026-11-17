@@ -8,7 +8,7 @@ export function HeroSection() {
     >
       <div className="flex w-full max-w-4xl flex-col items-center text-center">
         {/* Orbital Badge + Avatar */}
-        <div className="relative flex size-[min(84vw,21rem)] items-center justify-center">
+        <div className="relative flex size-[min(84vw,21rem)] items-center justify-center transition-transform duration-700 md:translate-x-[16.6667vw]">
           <span className="sr-only">
             Full stack developer specializing in AI integration.
           </span>
