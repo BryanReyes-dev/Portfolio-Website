@@ -31,7 +31,20 @@ function SectionHeading({
   );
 }
 
-const projects = [
+type ProjectCardData = {
+  name: string;
+  category: string;
+  description: string;
+  technologies: string[];
+  image?: string;
+  imageAlt?: string;
+  artwork?: string;
+  artworkLabel?: string;
+  liveUrl?: string;
+  sourceUrl?: string;
+};
+
+const projects: ProjectCardData[] = [
   {
     name: "Evergreen Estates",
     category: "Full-stack web application",
