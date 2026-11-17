@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { GlowCard } from "@/components/portfolio/glow-card";
+import { ProjectCarousel, type ProjectCardData } from "@/components/portfolio/project-carousel";
 
 function SectionHeading({
   eyebrow,
@@ -30,19 +30,6 @@ function SectionHeading({
     </div>
   );
 }
-
-type ProjectCardData = {
-  name: string;
-  category: string;
-  description: string;
-  technologies: string[];
-  image?: string;
-  imageAlt?: string;
-  artwork?: string;
-  artworkLabel?: string;
-  liveUrl?: string;
-  sourceUrl?: string;
-};
 
 const projects: ProjectCardData[] = [
   {
@@ -162,80 +149,7 @@ export function ProjectsSection() {
           description="A selection of applications and systems I have designed, built, and learned from."
         />
 
-        <div className="grid gap-5 md:grid-cols-2">
-          {projects.map((project) => (
-            <GlowCard key={project.name} className="flex h-full flex-col">
-              {project.image ? (
-                <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-xl border border-app-border-subtle bg-app-bg-base">
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt ?? ""}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 hover:scale-[1.03]"
-                  />
-                </div>
-              ) : (
-                <div className="relative mb-5 flex aspect-[16/9] flex-col justify-between overflow-hidden rounded-xl border border-app-border-subtle bg-app-bg-base p-6">
-                  <div
-                    aria-hidden="true"
-                    className="absolute -right-10 -top-16 size-48 rounded-full border border-app-primary-0/40 shadow-[0_0_35px_color-mix(in_srgb,var(--app-primary-color-0)_35%,transparent)]"
-                  />
-                  <p className="relative font-mono text-xs tracking-[0.2em] text-app-secondary-1">
-                    {project.artworkLabel}
-                  </p>
-                  <p className="relative font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                    {project.artwork}
-                  </p>
-                </div>
-              )}
-
-              <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-app-secondary-1">
-                {project.category}
-              </p>
-              <h3 className="font-heading text-xl font-semibold text-foreground">
-                {project.name}
-              </h3>
-              <p className="mt-3 flex-1 font-body text-sm leading-7 text-app-text-muted">
-                {project.description}
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.technologies.map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-app-border-subtle bg-app-bg-base px-3 py-1 font-mono text-[0.68rem] text-app-text-muted"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-6 flex flex-wrap gap-4 border-t border-app-border-subtle pt-4 font-heading text-sm font-semibold">
-                {project.liveUrl ? (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-app-secondary-1 transition-colors hover:text-foreground"
-                  >
-                    Live project ↗
-                  </a>
-                ) : null}
-                {project.sourceUrl ? (
-                  <a
-                    href={project.sourceUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-app-primary-0 transition-colors hover:text-foreground"
-                  >
-                    Source code ↗
-                  </a>
-                ) : null}
-              </div>
-            </GlowCard>
-          ))}
-        </div>
+        <ProjectCarousel projects={projects} />
       </div>
     </section>
   );
