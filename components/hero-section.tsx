@@ -78,10 +78,9 @@ export function HeroSection() {
           </div>
         </div>
 
-        
-
-        
-        
+        <h1 className="mt-2 font-body text-2xl font-semibold tracking-wide text-foreground sm:text-3xl md:translate-x-[16.6667vw] md:text-4xl">
+          Bryan Reyes
+        </h1>
       </div>
     </section>
   );
