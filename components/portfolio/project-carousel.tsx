@@ -23,7 +23,7 @@ function ProjectCard({ project }: { project: ProjectCardData }) {
   return (
     <GlowCard className="flex h-full flex-col">
       {project.image ? (
-        <div className="relative mb-5 aspect-[16/9] w-full overflow-hidden rounded-xl border border-app-border-subtle bg-app-bg-base">
+        <div className="relative mb-5 w-full overflow-hidden rounded-xl border border-app-border-subtle bg-app-bg-base">
           <Image
             src={project.image}
             alt={project.imageAlt ?? ""}
